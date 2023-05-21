@@ -1,13 +1,13 @@
 replicaCount: 5
 
 image:
-  repository: "bskeshab76820/custome-react-app"
+  repository: "bskeshab76820/creactapp"
   pullPolicy: Always
   tag: "v1"
 
 imagePullSecrets: []
-nameOverride: "react"
-fullnameOverride: "react-chart"
+nameOverride: "creactapp"
+fullnameOverride: "creactapp-chart"
 
 serviceAccount:
   create: true
@@ -22,18 +22,7 @@ securityContext: {}
 
 service:
   type: NodePort #ClusterIP
-  port: 3000
-
-ingress:
-  enabled: false
-  className: ""
-  annotations: {}
-  hosts:
-    - host: chart-example.local
-      paths:
-        - path: /
-          pathType: ImplementationSpecific
-  tls: []
+  port: 80
 
 resources: 
    limits:
